@@ -15,21 +15,21 @@
 <meta property="og:site_name" content="小王的博客">
 <meta property="og:description" content="Java内存区域与内存溢出异常运行时数据区域 程序计数器线程私有。多线程环境下，恢复现场需要程序计数器。 如果执行的是一个Java方法，计数器记录的时正在执行的虚拟机字节码指令的地址。 如果执行的是一个Native方法，计数器值为空(Undefined)。 唯一一个没有OutOfMemoryError情况的区域。 Java虚拟机栈线程私有。 每个方法执行的时候，都会创建一个栈帧。 栈帧会存放局部变">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://yoursite.com/2020/08/17/JVM%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(%E4%B8%80)%20%20%E8%87%AA%E5%8A%A8%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/..%5Cimages%5Cimage-20200816150934798.png">
+<meta property="og:image" content="http://yoursite.com/2020/08/17/images/image-20200816150934798.png">
 <meta property="og:image" content="http://yoursite.com/2020/08/17/images/image-20200817161808150.png">
 <meta property="og:image" content="http://yoursite.com/2020/08/17/images/image-20200817161826248.png">
-<meta property="og:image" content="http://yoursite.com/2020/08/17/JVM%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(%E4%B8%80)%20%20%E8%87%AA%E5%8A%A8%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/..%5Cimages%5Cimage-20200817163926501.png">
-<meta property="og:image" content="http://yoursite.com/2020/08/17/JVM%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(%E4%B8%80)%20%20%E8%87%AA%E5%8A%A8%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/..%5Cimages%5Cimage-20200817163941074.png">
-<meta property="og:image" content="http://yoursite.com/2020/08/17/JVM%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(%E4%B8%80)%20%20%E8%87%AA%E5%8A%A8%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/..%5Cimages%5Cimage-20200817164149601.png">
-<meta property="og:image" content="http://yoursite.com/2020/08/17/JVM%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(%E4%B8%80)%20%20%E8%87%AA%E5%8A%A8%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/..%5Cimages%5Cimage-20200817170226444.png">
-<meta property="og:image" content="http://yoursite.com/2020/08/17/JVM%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(%E4%B8%80)%20%20%E8%87%AA%E5%8A%A8%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/..%5Cimages%5Cimage-20200817170324452.png">
-<meta property="og:image" content="http://yoursite.com/2020/08/17/JVM%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(%E4%B8%80)%20%20%E8%87%AA%E5%8A%A8%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/..%5Cimages%5Cimage-20200817170839039.png">
+<meta property="og:image" content="http://yoursite.com/2020/08/17/images/image-20200817163926501.png">
+<meta property="og:image" content="http://yoursite.com/2020/08/17/images/image-20200817163941074.png">
+<meta property="og:image" content="http://yoursite.com/2020/08/17/images/image-20200817164149601.png">
+<meta property="og:image" content="http://yoursite.com/2020/08/17/images/image-20200817170226444.png">
+<meta property="og:image" content="http://yoursite.com/2020/08/17/images/image-20200817170324452.png">
+<meta property="og:image" content="http://yoursite.com/2020/08/17/images/image-20200817170839039.png">
 <meta property="article:published_time" content="2020-08-17T11:12:50.808Z">
-<meta property="article:modified_time" content="2020-08-17T11:36:41.237Z">
+<meta property="article:modified_time" content="2020-08-17T11:43:30.454Z">
 <meta property="article:author" content="wangxiaolei">
 <meta property="article:tag" content="Java">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://yoursite.com/2020/08/17/JVM%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(%E4%B8%80)%20%20%E8%87%AA%E5%8A%A8%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/..%5Cimages%5Cimage-20200816150934798.png">
+<meta name="twitter:image" content="http://yoursite.com/2020/08/17/images/image-20200816150934798.png">
   
     <link rel="alternative" href="/atom.xml" title="小王的博客" type="application/atom+xml">
   
@@ -170,7 +170,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Java内存区域与内存溢出异常"><a href="#Java内存区域与内存溢出异常" class="headerlink" title="Java内存区域与内存溢出异常"></a>Java内存区域与内存溢出异常</h1><h2 id="运行时数据区域"><a href="#运行时数据区域" class="headerlink" title="运行时数据区域"></a>运行时数据区域</h2><p><img src="..%5Cimages%5Cimage-20200816150934798.png"></p>
+        <h1 id="Java内存区域与内存溢出异常"><a href="#Java内存区域与内存溢出异常" class="headerlink" title="Java内存区域与内存溢出异常"></a>Java内存区域与内存溢出异常</h1><h2 id="运行时数据区域"><a href="#运行时数据区域" class="headerlink" title="运行时数据区域"></a>运行时数据区域</h2><p><img src="../images/image-20200816150934798.png"></p>
 <h3 id="程序计数器"><a href="#程序计数器" class="headerlink" title="程序计数器"></a>程序计数器</h3><p>线程私有。多线程环境下，恢复现场需要程序计数器。</p>
 <p>如果执行的是一个Java方法，计数器记录的时正在执行的<strong>虚拟机字节码指令的地址</strong>。</p>
 <p>如果执行的是一个Native方法，计数器值为空(Undefined)。</p>
@@ -252,23 +252,23 @@
 <li>在对象被移动的时候，句柄访问方式不用修改reference本身。</li>
 </ol>
 <p>两种方式都比较常见，HotSpot主要使用直接指针的方式。</p>
-<h2 id="实战：OutOfMemoryError异常"><a href="#实战：OutOfMemoryError异常" class="headerlink" title="实战：OutOfMemoryError异常"></a>实战：OutOfMemoryError异常</h2><h3 id="设置虚拟机参数"><a href="#设置虚拟机参数" class="headerlink" title="设置虚拟机参数"></a>设置虚拟机参数</h3><p><img src="..%5Cimages%5Cimage-20200817163926501.png" alt="image-20200817163926501"></p>
-<p><img src="..%5Cimages%5Cimage-20200817163941074.png" alt="image-20200817163941074"></p>
+<h2 id="实战：OutOfMemoryError异常"><a href="#实战：OutOfMemoryError异常" class="headerlink" title="实战：OutOfMemoryError异常"></a>实战：OutOfMemoryError异常</h2><h3 id="设置虚拟机参数"><a href="#设置虚拟机参数" class="headerlink" title="设置虚拟机参数"></a>设置虚拟机参数</h3><p><img src="../images/image-20200817163926501.png" alt="image-20200817163926501"></p>
+<p><img src="../images/image-20200817163941074.png" alt="image-20200817163941074"></p>
 <h3 id="Java堆溢出"><a href="#Java堆溢出" class="headerlink" title="Java堆溢出"></a>Java堆溢出</h3><p>-Xms20m：堆的最小大小为20m</p>
 <p>-Xmx20m：堆的最大大小为20m</p>
 <p>-XX：保存当前内存堆转储快照</p>
-<p><img src="..%5Cimages%5Cimage-20200817164149601.png" alt="image-20200817164149601"></p>
+<p><img src="../images/image-20200817164149601.png" alt="image-20200817164149601"></p>
 <h3 id="内存泄露和内存溢出"><a href="#内存泄露和内存溢出" class="headerlink" title="内存泄露和内存溢出"></a>内存泄露和内存溢出</h3><p>内存溢出：程序在申请内存时，没有足够的内存空间供其使用</p>
 <p>内存泄漏：程序在申请内存后，无法释放已申请的内存空间</p>
 <p>内存溢出最终会导致内存泄漏</p>
 <h3 id="虚拟机栈和本地方法栈溢出"><a href="#虚拟机栈和本地方法栈溢出" class="headerlink" title="虚拟机栈和本地方法栈溢出"></a>虚拟机栈和本地方法栈溢出</h3><p>HotSpot虚拟机不区分虚拟机栈和本地方法栈。</p>
 <p>-Xss128k：栈容量128k</p>
 <p>不加参数运行时，栈深度为25260</p>
-<p><img src="..%5Cimages%5Cimage-20200817170226444.png" alt="image-20200817170226444"></p>
-<p>加参数后，栈深度为<img src="..%5Cimages%5Cimage-20200817170324452.png" alt="image-20200817170324452"></p>
+<p><img src="../images/image-20200817170226444.png" alt="image-20200817170226444"></p>
+<p>加参数后，栈深度为<img src="../images/image-20200817170324452.png" alt="image-20200817170324452"></p>
 <p>这段代码使用递归来创建栈帧，当栈无法容纳新的栈帧的时候，就抛出StackOverFlowError异常。</p>
 <p>当局部变量表过大导致栈帧过大时，也会出现StackOverFlowError异常</p>
-<p><img src="..%5Cimages%5Cimage-20200817170839039.png" alt="image-20200817170839039"></p>
+<p><img src="../images/image-20200817170839039.png" alt="image-20200817170839039"></p>
 <h3 id="方法区和运行时常量池溢出"><a href="#方法区和运行时常量池溢出" class="headerlink" title="方法区和运行时常量池溢出"></a>方法区和运行时常量池溢出</h3><p>String::intern() 是一个本地方法，如果字符串常量池中没有包含该字符串，则将字符串添加到常量池并返回字符串对象的引用，否则直接返回字符串对象的引用。</p>
 <p>JDK 8之后永生代被元空间替代，很难出现方法区的溢出异常。</p>
 <p>-XX:MaxMetaspaceSize：设置元空间最大值，默认-1不限制。</p>
